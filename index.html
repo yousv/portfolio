@@ -7,12 +7,6 @@
       name="description"
       content="Portfolio of Yousef Mahgoub - Full Stack Web Developer"
     />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap"
-      rel="stylesheet"
-    />
     <link rel="stylesheet" href="styles.css" />
     <link rel="icon" href="assets/icon.png" type="image/png" />
     <link
@@ -27,22 +21,141 @@
     <title>Yousef Mahgoub</title>
   </head>
   <body>
-    <nav class="navbar glass-effect" aria-label="Main navigation">
+    <nav class="navbar" aria-label="Main navigation">
       <ul>
-        <li><a href="index.html" class="active">About Me</a></li>
-        <li><a href="./pages/projects.html">Projects</a></li>
-        <li><a href="./pages/Insights.html">Insights</a></li>
+        <li><a href="#about" class="active" data-tab="about">About Me</a></li>
+        <li><a href="#projects" data-tab="projects">Projects</a></li>
       </ul>
+      <div class="nav-indicator"></div>
     </nav>
-    <main>
-      <section class="intro no-select">
-        <h1 class="index-typing-animation">Full-Stack Web Developer</h1>
-        <p class="fade-in">
-          Hi, I'm <span class="highlight">Yousef Mahgoub</span>, crafting
-          responsive and intuitive web experiences. Explore my
-          <span class="highlight">projects</span> and technical
-          <span class="highlight">insights</span>.
-        </p>
+    <main class="no-select">
+      <section id="about" class="tab-content active">
+        <div class="intro no-select">
+          <h1 class="typing-animation">Full-Stack Web Developer</h1>
+          <p class="fade-in-1s">
+            Hi, I'm <span class="highlight">Yousef Mahgoub</span>, a self-taught
+            developer passionate about crafting polished web experiences. With a
+            unique background in medical laboratory science, I bring analytical
+            precision and creative problem-solving to every project.
+          </p>
+        </div>
+
+        <section class="skills-section fade-in-2s">
+          <h2>Technical Skills</h2>
+          <div class="skills-container">
+            <div class="skills-group frontend">
+              <h3>Frontend</h3>
+              <div class="skills-grid">
+                <div class="skill-item">
+                  <i class="fab fa-html5"></i>
+                  <span>HTML5</span>
+                  <div class="skill-level" data-level="95"></div>
+                </div>
+                <div class="skill-item">
+                  <i class="fab fa-css3-alt"></i>
+                  <span>CSS3</span>
+                  <div class="skill-level" data-level="85"></div>
+                </div>
+                <div class="skill-item">
+                  <i class="fa-solid fa-wind"></i>
+                  <span>Tailwind</span>
+                  <div class="skill-level" data-level="0"></div>
+                </div>
+              </div>
+            </div>
+
+            <div class="skills-group backend">
+              <h3>Backend</h3>
+              <div class="skills-grid">
+                <div class="skill-item">
+                  <i class="fab fa-js"></i>
+                  <span>JavaScript</span>
+                  <div class="skill-level" data-level="30"></div>
+                </div>
+                <div class="skill-item">
+                  <i class="fab fa-react"></i>
+                  <span>React</span>
+                  <div class="skill-level" data-level="0"></div>
+                </div>
+                <div class="skill-item">
+                  <i class="fab fa-git-alt"></i>
+                  <span>Git</span>
+                  <div class="skill-level" data-level="20"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </section>
+
+      <section id="projects" class="tab-content">
+        <div class="intro no-select">
+          <h1 class="fade-in-1s">Featured Projects</h1>
+          <p class="fade-in-1-5s">
+            A collection of my latest work and personal projects in web
+            development.
+          </p>
+        </div>
+        <div class="projects-grid">
+          <div class="project-card glass-effect fade-in-2s">
+            <img
+              src="./assets/gpa-calc.png"
+              alt="GPA Calculator Interface"
+              class="project-img"
+              loading="lazy"
+              width="640"
+              height="360"
+            />
+            <h3>GPA Calculator</h3>
+            <p>
+              A simple gpa calculator i made for my university major that
+              calculates the semester and cumulative gpa by entering the
+              percentage of each course.
+            </p>
+            <div class="project-links">
+              <a href="https://yousv.github.io/gpa-calculator/" target="_blank"
+                >Live Demo</a
+              >
+              <a href="https://github.com/yousv/gpa-calculator" target="_blank"
+                >Source Code</a
+              >
+            </div>
+          </div>
+          <div class="project-card fade-in-2-5s">
+            <img
+              src="https://placehold.co/640x360/1c1c25/9c9eb8"
+              alt="Project thumbnail"
+              class="project-img"
+              loading="lazy"
+            />
+            <h3>Coming Soon</h3>
+            <p>
+              Description of the project goes here. This is a placeholder for
+              future projects.
+            </p>
+            <div class="project-links">
+              <a href="#" target="_blank">Live Demo</a>
+              <a href="#" target="_blank">Source Code</a>
+            </div>
+          </div>
+          <div class="project-card fade-in-3s">
+            <img
+              src="https://placehold.co/640x360/1c1c25/9c9eb8"
+              alt="Project thumbnail"
+              class="project-img"
+              loading="lazy"
+            />
+            <h3>Coming Soon</h3>
+            <p>
+              Description of the project goes here. This is a placeholder for
+              future projects.
+            </p>
+            <div class="project-links">
+              <a href="#" target="_blank">Live Demo</a>
+              <a href="#" target="_blank">Source Code</a>
+            </div>
+          </div>
+        </div>
       </section>
     </main>
     <div class="social-bar">
@@ -68,5 +181,6 @@
         ><i class="fas fa-envelope"></i
       ></a>
     </div>
+    <script src="main.js"></script>
   </body>
 </html>
