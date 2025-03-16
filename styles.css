@@ -1,6 +1,4 @@
-/* CSS Variables */
 :root {
-  /* Colors */
   --color-background-dark: #0f0f0f;
   --color-background-light: #1c1c25;
   --color-border: #3d3e47;
@@ -8,21 +6,16 @@
   --color-text-primary: #9c9eb8;
   --color-text-bright: #c2c4e6;
   --color-border-highlight: #4a4b57;
-
-  /* Layout */
   --container-width: 85%;
   --container-max-width: 1400px;
   --card-gap: 2rem;
   --card-padding: 1.25rem;
-
-  /* Effects */
   --transition-duration: 0.3s;
   --transition-default: all var(--transition-duration) ease;
   --blur-strength: 8px;
   --card-background: rgba(31, 31, 39, 0.6);
 }
 
-/* Base Styles */
 * {
   color: var(--color-text-primary);
   margin: 0;
@@ -46,19 +39,16 @@ body {
   animation: gradientShift 15s ease infinite;
 }
 
-/* Selection Styles */
 ::selection {
   background: var(--color-border);
   color: var(--color-text-bright);
 }
 
-/* Utility Classes */
 .no-select {
   user-select: none;
   -webkit-user-select: none;
 }
 
-/* Animations */
 @keyframes gradientShift {
   0%,
   100% {
@@ -89,11 +79,6 @@ body {
   }
 }
 
-.fade-from-top {
-  animation: fadeFromTop 0.8s ease forwards;
-}
-
-/* Navigation */
 .navbar {
   background: var(--card-background);
   backdrop-filter: blur(var(--blur-strength));
@@ -174,7 +159,6 @@ body {
   outline: none;
 }
 
-/* Index Intro Typing Animation */
 .index-typing-animation {
   border-right: 2px solid var(--color-text-bright);
   width: 21ch;
@@ -197,34 +181,13 @@ body {
   }
 }
 
-/* Touch Device Handling */
-@media (hover: none) {
-  .navbar a:active::after {
-    transform: scaleX(1);
-    transition-delay: 0.3s;
-  }
-
-  .social-link:active {
-    transform: translateX(-5px);
-    background: var(--color-border);
-    color: var(--color-text-bright);
-    transition-delay: 0.3s;
-  }
-
-  .project-card:active {
-    transform: translateY(-0.5rem);
-    border-color: var(--color-text-primary);
-    transition-delay: 0.3s;
-  }
-}
-
 @media (hover: hover) {
-  .hover-lift {
-    transition: var(--transition-default);
+  .navbar a:hover {
+    color: var(--color-text-bright);
   }
 
-  .hover-lift:hover {
-    transform: translateY(-0.5rem);
+  .navbar a:hover::after {
+    transform: scaleX(1);
   }
 }
 
@@ -264,7 +227,6 @@ main {
   animation-delay: 1.5s;
 }
 
-/* Social Bar */
 .social-bar {
   position: fixed;
   right: 2rem;
@@ -324,7 +286,6 @@ main {
   border-color: var(--color-text-bright);
 }
 
-/* Layout & Grid */
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -335,7 +296,6 @@ main {
   margin: 0 auto;
 }
 
-/* Project Cards */
 .project-card {
   background: var(--card-background);
   backdrop-filter: blur(var(--blur-strength));
@@ -402,52 +362,21 @@ main {
   border-color: var(--color-text-bright);
 }
 
-/* Media Queries */
-@media (max-width: 1200px) {
+@media (max-width: 1199px) {
   .projects-grid {
     grid-template-columns: repeat(2, 1fr);
-    --container-width: 90%;
-    --card-gap: 1.5rem;
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 699px) {
   .projects-grid {
     grid-template-columns: 1fr;
     --container-width: 95%;
     max-width: 500px;
-    --card-gap: 1.25rem;
-  }
-
-  .project-card {
-    --card-padding: 1rem;
-  }
-}
-
-@media (max-width: 48rem) {
-  .navbar {
-    width: 95%;
-  }
-  .navbar a {
-    font-size: 1.25rem;
-    padding: 0 0.9375rem;
-  }
-  .intro h1 {
-    font-size: 2rem;
-  }
-  .intro p {
-    font-size: 1rem;
-  }
-  .social-bar {
-    right: 1rem;
-  }
-  .projects-grid {
+    --card-gap: 1rem;
     padding: 1rem;
-    gap: 1rem;
   }
-}
 
-@media (max-width: 480px) {
   .project-card {
     padding: 1rem;
     max-height: 420px;
@@ -461,39 +390,34 @@ main {
     padding: 0.35rem 0.75rem;
     font-size: 0.85rem;
   }
-}
 
-@media (max-width: 30rem) {
   .navbar {
+    width: 95%;
     border-radius: 1.25rem;
   }
+
   .navbar ul {
     border-radius: inherit;
   }
+
   .navbar a {
     font-size: 1rem;
     padding: 0 0.625rem;
   }
+
   .intro h1 {
     font-size: 1.75rem;
   }
+
   .intro p {
     font-size: 0.875rem;
   }
+
   .social-bar {
     flex-direction: row;
     right: 50%;
     bottom: 1rem;
     top: auto;
-    transform: translateX(50%);
-  }
-  .social-link:hover {
-    transform: translateY(-5px);
-  }
-  .social-link::after {
-    right: 50%;
-    top: auto;
-    bottom: calc(100% + 10px);
     transform: translateX(50%);
   }
 }
